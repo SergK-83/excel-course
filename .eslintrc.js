@@ -15,6 +15,7 @@ module.exports = {
     'linebreak-style': ['error', 'windows'],
     'semi': 'off',
     'comma-dangle': 'off',
-    'require-jsdoc': 'off'
+    'require-jsdoc': 'off',
+    'arrow-parens': 'off'
   },
 }
