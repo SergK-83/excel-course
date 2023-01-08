@@ -1,16 +1,16 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyPlugin = require("copy-webpack-plugin")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const CopyPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = (env, argv) => {
-
   const isProd = argv.mode === 'production'
   const isDev = !isProd
 
   console.log('mode', argv.mode)
-  const filename = ext => isProd ? `[name].[contenthash].bundle.${ext}` : `[name].bundle.${ext}`
+  const filename = (ext) =>
+    isProd ? `[name].[contenthash].bundle.${ext}` : `[name].bundle.${ext}`
   const plugins = () => {
     const base = [
       new HtmlWebpackPlugin({
@@ -73,16 +73,16 @@ module.exports = (env, argv) => {
           use: [
             MiniCssExtractPlugin.loader,
             // Translates CSS into CommonJS
-            "css-loader",
+            'css-loader',
             // Compiles Sass to CSS
-            "sass-loader",
+            'sass-loader',
           ],
         },
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env']
             }
