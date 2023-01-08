@@ -39,6 +39,7 @@
   "description": "",
   "dependencies": {
     "core-js": "^3.27.1",
+    "normalize.css": "^8.0.1",
     "regenerator-runtime": "^0.13.11"
   }
 }
