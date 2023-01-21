@@ -16,6 +16,8 @@ module.exports = {
     'semi': 'off',
     'comma-dangle': 'off',
     'require-jsdoc': 'off',
-    'arrow-parens': 'off'
+    'arrow-parens': 'off',
+    'operator-linebreak': 'off',
+    'padded-blocks': 'off',
   },
 }
