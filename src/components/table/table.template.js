@@ -15,10 +15,10 @@ function toColumn(name) {
   `
 }
 
-function createRow(content, rowInfo = '') {
+function createRow(rowInfo, content) {
   return `
     <div class="row">
-        <div class="row-info">${rowInfo}</div>
+        <div class="row-info">${rowInfo || ''}</div>
         <div class="row-data">${content}</div>
     </div>
   `
@@ -37,7 +37,7 @@ export function createTable(rowCount = 15) {
     .map(toColumn)
     .join('')
 
-  rows.push(createRow(cols))
+  rows.push(createRow(null, cols))
 
   for (let i = 0; i < rowCount; i++) {
     const cells = new Array(colsCount)
@@ -45,7 +45,7 @@ export function createTable(rowCount = 15) {
       .map(createCell)
       .join('')
 
-    rows.push(createRow(cells, String(i + 1)))
+    rows.push(createRow(i + 1, cells))
   }
 
   return rows.join('')
