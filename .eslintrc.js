@@ -19,5 +19,7 @@ module.exports = {
     'arrow-parens': 'off',
     'operator-linebreak': 'off',
     'padded-blocks': 'off',
+    'no-unused-vars': 'warn',
+    'indent': 'off',
   },
 }
